@@ -52,7 +52,9 @@ print(result)
 #print(help(str))
 
 username = input('enter your username: ')
-if 12 > len(username) > 0 and username.count(" ") == 0 and username.isdigit() == False:
-  print('Valid username')
+if len(username) > 12:
+  print("no more than 12 characters")
+if username.count(" ") > 0:
+  print("must not contain spaces")
 else:
-  print('Invalid username')
+  print('Valid username')
