@@ -78,3 +78,40 @@ print("JK" in book1)#true
 #for more go to website 
 #https://docs.python.org/3/reference/datamodel.html#special-method-names
 
+
+#PYTHON FILE DETECTION
+
+import os
+
+def check_file_exists(file_path):
+  if os.path.isfile(file_path):
+    return True
+  
+print(check_file_exists("Day_8.py")) #true
+
+
+#PYTHON writing files
+txt_data = "I like Min yoongi <3"
+file_path = "output.txt" #you can put it in different locations
+
+with open(file_path, "w") as file: #w means write
+  file.write(txt_data)
+  print(f"txt file '{file_path}' was created")
+
+
+#PYTHON deleting files
+
+file_path = "output.txt"
+
+if os.path.exists(file_path):
+  os.remove(file_path)
+  print(f"txt file '{file_path}' was deleted")
+
+#PYTHON reading files
+
+file_path = "output.txt"
+
+with open(file_path, "r") as file: #r means read
+  content = file.read()
+  print(content)
+
